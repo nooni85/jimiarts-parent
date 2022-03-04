@@ -11,8 +11,21 @@ spring:
     hibernate:
       ddl-auto: validate
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb;MODE=PostgreSQL;
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:h2:mem:testdb;MODE=PostgreSQL;
     username: SA
     password:
     initialization-mode: always
+logging:
+  level:
+    tracelog: info
+    root: info
+    com:
+      jimiarts: debug
+    org:
+      hibernate:
+        SQL: off
+      springframework:
+        web: info
+        boot:
+          autoconfigure: info

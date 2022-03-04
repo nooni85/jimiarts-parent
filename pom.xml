@@ -20,7 +20,7 @@
  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <junit.version>4.13.2</junit.version>
+    <log4jdbc-log4j2-jdbc4.1-version>1.16</log4jdbc-log4j2-jdbc4.1-version>
   </properties>
 
 
@@ -39,16 +39,14 @@
  
   <dependencies>
     <dependency>
+      <groupId>org.bgee.log4jdbc-log4j2</groupId>
+      <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
+      <version>${log4jdbc-log4j2-jdbc4.1-version}</version>
+    </dependency>
+    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
-    </dependency>
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 

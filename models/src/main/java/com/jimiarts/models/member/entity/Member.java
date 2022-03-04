@@ -20,7 +20,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Member extends BaseEntity implements UserDetails {
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "MEMBER_SEQ", sequenceName = "MEMBER_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEMBER_SEQ")
     Long id;
 
     @Column(nullable = false)
@@ -45,6 +46,11 @@ public class Member extends BaseEntity implements UserDetails {
     Boolean isEnabled;
 
     @ManyToMany
+    @JoinTable(
+            name = "MEMBER_ROLES",
+            joinColumns = @JoinColumn(name = "MEMBER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
+    )
     List<Role> roles;
 
     @Override
