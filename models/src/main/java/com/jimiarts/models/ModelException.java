@@ -1,6 +1,6 @@
 package com.jimiarts.models;
 
-public class ModelException extends RuntimeException{
+public class ModelException extends RuntimeException {
     public ModelException() {
         super();
     }
