@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout/default}">
+<head>
+    <title th:text="#{home.title}"></title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+    <section class="vh-100" layout:fragment="content">
+        <div class="container py-5 h-100">
+            <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+                </div>
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    <form>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="email" id="form1Example13" class="form-control form-control-lg" />
+                            <label class="form-label" for="form1Example13" th:text="#{word.email}"></label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <input type="password" id="form1Example23" class="form-control form-control-lg" />
+                            <label class="form-label" for="form1Example23" th:text="#{word.password}"></label>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" th:text="#{word.login}"></button>
+
+                        <!-- Sign up Button -->
+                        <a class="btn btn-primary btn-lg btn-block" th:href="@{/auth/join}" th:text="#{word.join}"></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div th:replace="fragments/footer :: footer"></div>
+</section>
+</body>
+</html>
