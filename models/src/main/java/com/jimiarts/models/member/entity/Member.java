@@ -47,9 +47,9 @@ public class Member extends BaseEntity implements UserDetails {
 
     @ManyToMany
     @JoinTable(
-            name = "MEMBER_ROLES",
-            joinColumns = @JoinColumn(name = "MEMBER_ID"),
-            inverseJoinColumns = @JoinColumn(name = "ROLE_ID")
+            name = "authorization",
+            joinColumns = @JoinColumn(name = "member_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     List<Role> roles;
 

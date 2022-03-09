@@ -32,12 +32,12 @@ create table if not exists role (
 
 
 -- 회원 롤 시퀀스 생성
-create sequence if not exists member_roles_seq;
+create sequence if not exists authorization_seq;
 
 -- 멤버롤
-create table if not exists member_roles
+create table if not exists authorization
 (
-    id                         bigint       not null default nextval('member_roles_seq'), -- 맵핑 고유 번호
+    id                         bigint       not null default nextval('authorization_seq'), -- 맵핑 고유 번호
     member_id                  bigint       not null,
     role_id                    bigint       not null,
     updated_at                 timestamp    not null,     -- 업데이트일시
