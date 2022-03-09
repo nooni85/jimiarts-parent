@@ -28,8 +28,6 @@ create table if not exists role (
     created_at                 timestamp    not null      -- 생성일시
 );
 
--- create unique index if not exists idx_role_name on role(role_name);
-
 
 -- 회원 롤 시퀀스 생성
 create sequence if not exists authorization_seq;
