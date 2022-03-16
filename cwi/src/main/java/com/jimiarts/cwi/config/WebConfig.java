@@ -1,4 +1,4 @@
-package com.jimiarts.cwi.config.config;
+package com.jimiarts.cwi.config;
 
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.context.annotation.Bean;

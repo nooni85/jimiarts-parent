@@ -19,9 +19,11 @@ class AuthControllerTest {
 
     @Test
     public void joinTest() throws Exception {
-        mockMvc.perform(get("/auth/login"))
+        assertTrue(mockMvc.perform(get("/auth/login"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("로그인"))
-                .andDo(print());
+                .andReturn()
+                .getResponse()
+                .getContentAsString()
+                .contains("로그인"));
     }
 }
