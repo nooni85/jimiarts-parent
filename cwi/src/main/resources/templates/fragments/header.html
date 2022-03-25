@@ -35,8 +35,11 @@
             <ul class="navbar-nav">
                 <li class="nav-item" th:if="${#authorization.expression('!isAuthenticated()')}">
                     <a class="nav-link" th:href="@{/auth/login}" th:text="#{word.login}"></a>
+                </li>
+                <li class="nav-item" th:if="${#authorization.expression('!isAuthenticated()')}">
                     <a class="nav-link" th:href="@{/auth/join}" th:text="#{word.join}"></a>
                 </li>
+
                 <li class="nav-item dropdown" th:if="${#authorization.expression('isAuthenticated()')}">
                     <a class="nav-link dropdown-toggle" href="#" id="authDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown

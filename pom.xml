@@ -15,7 +15,7 @@
   <artifactId>jimiarts-parent</artifactId>
   <name>jimiarts-parent (java.framework)</name>
   <version>0.0.1-SNAPSHOT</version>
-  <description>o2o-jimiarts Platform Services by Jimiarts. (java.framework)</description>
+  <description>Jimiarts Platform Services by Jimiarts.</description>
   <packaging>pom</packaging>
  
   <properties>
