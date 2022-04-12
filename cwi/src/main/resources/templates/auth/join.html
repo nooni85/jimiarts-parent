@@ -16,22 +16,35 @@
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <h1 th:text="#{word.join}"></h1>
-                    <th:form th:action="@{/auth/join}" method="post" >
+
+                    <form th:action="@{/auth/join}" method="post" th:object="${memberForm}">
+                        <div th:if="${#fields.hasAnyErrors()}">
+                            <ul>
+                                <li th:each="err : ${#fields.allErrors()}" th:text="${err}" />
+                            </ul>
+                        </div>
+
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="form1Example13" class="form-control form-control-lg" />
+                            <input type="email" id="form1Example13" class="form-control form-control-lg" th:field="*{username}" />
                             <label class="form-label" for="form1Example13" th:text="#{word.email}"></label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                            <input type="password" id="formPasswordId" class="form-control form-control-lg" />
-                            <label class="form-label" for="formPasswordId" th:text="#{word.password}"></label>
+                            <input type="password" id="formPasswordId" class="form-control form-control-lg" th:field="*{password}"/>
+                            <label class="form-label" for="formPasswordId" th:text="#{word.password}" ></label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <input type="password" id="formPasswordConfirmation" class="form-control form-control-lg" th:field="*{passwordConfirmation}"/>
+                            <label class="form-label" for="formPasswordConfirmation" th:text="#{word.passwordConfirmation}"></label>
                         </div>
 
                         <!-- Submit button -->
                         <button type="submit" class="btn btn-primary btn-lg btn-block" th:text="#{word.join}"></button>
-                    </th:form>
+                    </form>
                 </div>
             </div>
         </div>
